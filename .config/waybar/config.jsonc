@@ -1,0 +1,205 @@
+[	
+
+{
+"name": "lad",
+  "reload_style_on_change": true,
+    "layer": "top",
+    "position": "right",
+    "output": ["DP-4"],
+    "width": 66,
+//"height": 1405,
+//"margin-right": 10,
+"margin-left": 4,
+//"margin-top":7,
+//"margin-bottom":7,
+      "modules-left": ["group/left1","ext/workspaces"],
+"modules-center": ["group/center1"],  
+"modules-right": [ "clock","group/right1","custom/menu"],
+
+  "group/left1": {
+	"orientation": "inherit",
+	"modules": [
+"custom/image",    
+//"custom/omarchy",
+    "cpu",
+    "memory"
+	]
+},
+
+ "group/right1": {
+	"orientation": "inherit",
+	"modules": [
+    "tray",
+    "custom/separator#blank",   
+ "custom/separator#dot",
+    "custom/separator#blank",
+"pulseaudio/slider",
+"pulseaudio",
+//"custom/volume",
+    "custom/separator#blank",  
+ "bluetooth",
+    "custom/separator#blank",
+"network"
+	]
+},
+
+  "group/center1": {
+        "orientation": "inherit",
+        "modules": [
+  //  "mpris",
+//"custom/active_window",
+ "custom/media"
+        ]
+},
+
+ "custom/omarchy": {
+    "format": "󰣇 ",
+    "on-click": "rofi -show drun"
+  },
+
+   "ext/workspaces": {
+    "format": "{icon}",
+    "ignore-empty": true,
+    "on-click": "activate",
+    "on-click-right": "deactivate",
+    "sort-by-id": true,
+	   "format-icons": {
+          "default": "󰊠",
+          "active": "󰮯",
+          "urgent": " ",
+          "empty": "󰝥",
+        },
+      "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+    },
+	},
+
+"cpu": {
+  "interval": 2,
+  "format": "{icon}",
+  "format-icons": ["󰻠", "󰻠", "󰻠", "󰻠", "󰻠", "󰻠", "󰻠", "󰻠"],
+  "on-click": "kitty -e btop"
+},
+
+"memory": {
+  "interval": 2,
+  "format": "{icon}",
+  "format-icons": ["󰍛", "󰍛", "󰍛", "󰍛", "󰍛", "󰍛", "󰍛", "󰍛"],
+  "on-click": "kitty -e btop"
+},
+
+ "bluetooth": {
+    "format": " 󰂯 ",
+    "format-disabled": "  󰂲 ",
+    "format-connected": "  ",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "scroll-step": false,
+    "format-muted": "󰖁 ",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀 ",
+        "󰕾 "
+      ]
+    }
+  },
+
+ "network": {
+    "format-icons": ["󰤯", "󰤨", "󰤨", "󰤨", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "   󰌘 ",
+    "format-disconnected": "   󰤮 ",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+  },
+
+ "custom/separator#blank": {
+	  "format": " ",
+	  "interval": "once",
+	  "tooltip": false
+},
+
+  "custom/separator#dot": {
+	  "format": "󰝥",
+	  "interval": "once",
+	  "tooltip": false
+},
+  "clock": {
+    "interval": 1,
+    "format": "{:%I
+%M}",
+    "format-alt": "{:%d 
+%m 
+%y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+},	
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8,
+  },
+
+"custom/menu": {
+     "format": "󰤂",
+      "on-click": "rofi -show power-menu -modi power-menu:/home/aaron/.config/rofi/modules/rofi-power-menu -theme /home/aaron/.config/rofi/modules/power.rasi",
+
+},
+
+"mpris": {
+//	"interval": 10,
+	"format": "{player_icon} {dynamic}",
+	"format-paused": "no fuck !",
+    "rotate": 90,
+    //"justify": "center",
+    //"align": 0.5,
+    "max-length": 40,
+    "min-length": 40,
+    "dynamic-len": 60,
+    "dynamic-importance-order": ["title", "artist"],
+"dynamic-order": ["title", "artist"]
+},
+
+"pulseaudio/slider": {
+    "min": 0,
+    "max": 100,    
+"orientation": "vertical",
+ "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5"
+},
+
+"custom/media": {
+  "exec": "title=$(playerctl metadata title 2>/dev/null); if [ -n \"$title\" ]; then echo \"󰎇 ${title:0:25} \"; else echo \"󰎇         No media           \"; fi",
+  "interval": 1,
+    "rotate": 90,
+  "on-click": "playerctl play-pause"
+},
+
+  "custom/active_window": {
+    "exec": "~/.config/waybar/Modules/window.sh",
+    "return-type": "json",
+    "markup": true
+  },
+"custom/image": {
+        "interval": "once", 
+   "format": " ",
+"on-click": "rofi -show drun",
+    "tooltip": false  
+},
+
+}
+
+]
