@@ -1,0 +1,197 @@
+@import "/home/aaron/.cache/wal/colors-waybar.css";
+
+*.lad {
+  color: @foreground;
+  border: none;
+  border-radius: 0px;
+  min-height: 0;
+  font-family: 'Iosevka term heavy', Material Design Icons Desktop;
+}
+
+window#waybar.lad {
+  background-color: alpha(#15150a,0.85);
+  transition-property: background-color;
+  transition-duration: .5s;
+  border-radius: 0px;
+}
+
+
+window#waybar.lad 
+#workspaces {
+    padding: 8px 0px;
+    margin: 5px 12px;
+    border-radius: 4px;
+    background-color:  alpha(@foreground,0.11);
+    opacity: 0.75;
+}
+
+window#waybar.lad #workspaces button {
+  all: initial;
+  padding: 3px 0px;
+  margin: 0 1.5px;
+  min-width: 10px;
+ font-size: 16px;
+}
+
+window#waybar.lad #workspaces button.empty {
+  opacity: 0.5;
+}
+
+window#waybar.lad #workspaces button.active {
+  border-radius: 20px;
+  background: alpha(@color2,0.60);
+  opacity: 1;
+  margin-top: 3px;
+  margin-bottom: 8px;
+  margin-left: 6px;
+  margin-right: 6px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+window#waybar.lad #workspaces button:hover {
+  border-radius: 0px;
+  background: transparent;
+  opacity: 1;
+}
+
+window#waybar.lad #tray {
+  background:@color1;
+  border-radius: 99px;
+  padding: 4px 0px;
+  margin: 1px 10px;
+font-size: 24px;
+}
+window#waybar.lad #clock {
+  font-size: 22px;
+  font-weight: 700;
+background-color: alpha(@foreground,0.10);
+border-radius: 3px;
+padding: 10px 0px;
+margin: 2px 12px;
+}
+
+window#waybar.lad #pulseaudio {
+  min-width: 12px;
+  margin: 0px 0px 0px 5px;
+ font-size: 20px;
+}
+
+window#waybar.lad #bluetooth {
+  margin-right: 0px;
+    font-size: 20px;
+}
+
+window#waybar.lad #network {
+  margin-right: 0px;
+}
+
+window#waybar.lad tooltip {
+  background: @background;
+  border: 1px solid alpha(@color1,0.70);
+  border-radius: 4px 4px 11px 11px;
+}
+window#waybar.lad tooltip label {
+  color: white;
+}
+
+window#waybar.lad #cpu, #memory {
+    font-size: 18px;
+}
+
+window#waybar.lad #custom-omarchy {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 25px 10px 10px 10px;
+}
+
+window#waybar.lad #custom-menu {
+  font-size: 22px;
+  margin: 1px 12px 15px 12px;
+  background:  alpha(@foreground,0.10);
+  border-radius: 3px;
+    font-weight: bold;
+  padding: 12px 6px 12px 6px;
+
+}
+
+window#waybar.lad #right1 {
+    font-weight: bold;
+    background:  alpha(@foreground,0.10);
+    padding: 13px 0px;
+   margin: 10px 12px;
+ border-radius: 4px;
+font-size: 16.5px;
+}
+
+window#waybar.lad
+#center3,
+window#waybar.lad #cpu,
+window#waybar.lad #memory,
+#center2 {
+    font-weight: 100;
+  font-size: 24px;
+    background:  alpha(@foreground,0.10);    
+    border-radius: 4px;
+    padding: 7px 0px 7px 0px;
+    margin: 6px 12px;
+    opacity: 0.95
+}
+
+window#waybar.lad
+#center1 {
+   font-weight: 100;
+   font-size: 16px;
+   background:  alpha(@foreground,0.09);
+   border-radius: 4px;
+   margin: 6px 12px;
+   padding: 17px 0px 17px 0px;
+}
+
+
+window#waybar.lad 
+#pulseaudio-slider {
+padding: 0px 0px 10px 0px;
+margin: 0;
+}
+
+window#waybar.lad
+#pulseaudio-slider slider {
+min-height: 0px;
+min-width: 0px;
+opacity: 0.9;
+}
+
+window#waybar.lad
+#pulseaudio-slider trough {
+min-height: 90px;
+min-width: 5px;
+border-radius: 10px;
+  background:  alpha(@foreground,0.22);
+
+}
+
+window#waybar.lad
+#pulseaudio-slider highlight {
+min-width: 10px;
+border-radius: 10px;
+  background: alpha(@color2,0.60);
+
+}
+
+window#waybar.lad #custom-image
+ {
+    min-width: 8px;
+    min-height: 8px;
+    background-image: url("file:///home/aaron/.config/waybar/profile.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  border-radius: 50%;
+    background-size: cover; 
+   margin: 18px 12px 11px 12px;
+   padding: 11px 0px 11px 0px;
+ border: 0px solid;
+border-color: @foreground
+}
+
