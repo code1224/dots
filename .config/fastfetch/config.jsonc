@@ -1,0 +1,74 @@
+{
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/logo.txt",
+    "color": {
+      "1": "white",
+      "2": "white",
+      "3": "white",
+      "4": "white",
+      "5": "white",
+      "6": "white",
+      "7": "white",
+      "8": "white",
+      "9": "38;2;116;199;236"
+    },
+    "padding": {
+      "top": 0,
+      "right": 3
+    }
+  },
+  "display": {
+    "separator": " ▸ " // :
+  },
+  "modules": [
+    {
+      "type": "title"
+    },
+    "break",
+    {
+      "type": "os",
+      "key": "",
+      "keycolor": "yellow"
+    },
+    {
+      "type": "kernel",
+      "key": "",
+      "keycolor": "red"
+    },
+    {
+      "type": "wm",
+      "key": "",
+      "keycolor": "magenta"
+    },
+    {
+      "type": "packages",
+      "key": "",
+      "keycolor": "magenta"
+    },
+    {
+      "type": "memory",
+      "key": "",
+      "keycolor": "magenta"
+    },
+    {
+      "type": "host",
+      "key": "",
+      "keycolor": "magenta"
+    },
+    {
+      "type": "uptime",
+      "key": "",
+      "keycolor": "yellow"
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 10,
+      "symbol": "circle",
+      "block": {
+        "width": 5
+      }
+    },
+    "break",
+  ]
+}
